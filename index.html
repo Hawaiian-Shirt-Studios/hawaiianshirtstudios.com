@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hawaiian Shirt Studios</title>
+  <meta name="description" content="Hawaiian Shirt Studios is a small independent studio making calm, beautiful games. First up: Approach, a game about drawing flight paths and landing planes." />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#F4593B" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hawaiian Shirt Studios" />
+  <meta property="og:title" content="Hawaiian Shirt Studios" />
+  <meta property="og:description" content="A small independent studio making calm, beautiful games. First up: Approach." />
+  <meta property="og:url" content="https://hawaiianshirtstudios.com/" />
+  <meta property="og:image" content="https://hawaiianshirtstudios.com/assets/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@HawaiianStudios" />
+  <meta name="twitter:title" content="Hawaiian Shirt Studios" />
+  <meta name="twitter:description" content="A small independent studio making calm, beautiful games. First up: Approach." />
+  <meta name="twitter:image" content="https://hawaiianshirtstudios.com/assets/logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Hawaiian Shirt Studios home">
+      <img src="assets/logo.png" alt="" class="brand__mark" width="40" height="40" />
+      <span class="brand__name">Hawaiian&nbsp;Shirt&nbsp;Studios</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#approach">Approach</a>
+      <a href="#studio">Studio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero__sky">
+      <div class="hero__sun" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero__content">
+      <img src="assets/logo.png" alt="Hawaiian Shirt Studios logo" class="hero__logo" width="150" height="150" />
+      <h1 class="hero__title">Hawaiian Shirt Studios</h1>
+      <p class="hero__tagline">A small studio making calm, beautiful games.<br />Built slow, from a sunny corner of the internet.</p>
+      <a href="#approach" class="btn btn--primary">Meet Approach</a>
+    </div>
+
+    <!-- layered waves transitioning into the page -->
+    <svg class="hero__waves" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <path class="wave wave--1" d="M0,96 C240,150 480,40 720,80 C960,120 1200,180 1440,120 L1440,220 L0,220 Z"></path>
+      <path class="wave wave--2" d="M0,140 C260,90 520,180 760,140 C1000,100 1220,150 1440,120 L1440,220 L0,220 Z"></path>
+      <path class="wave wave--3" d="M0,180 C300,150 560,210 820,180 C1080,150 1260,200 1440,175 L1440,220 L0,220 Z"></path>
+    </svg>
+  </section>
+
+  <main>
+    <!-- ============ APPROACH ============ -->
+    <section class="approach" id="approach">
+      <p class="eyebrow">Our first game</p>
+
+      <div class="game">
+        <div class="game__intro">
+          <img src="assets/approach-icon.png" alt="Approach app icon" class="game__icon" width="120" height="120" />
+          <div>
+            <h2 class="game__title">Approach</h2>
+            <span class="badge">Coming soon to iOS</span>
+          </div>
+        </div>
+
+        <p class="game__lead">
+          You are the calm hand above a small, beautiful airspace. Draw flight paths
+          with your finger, stack aircraft at different altitudes so they pass safely
+          over one another, and land everything.
+        </p>
+
+        <p class="game__body">
+          It starts near-silent and nearly empty. The first ninety seconds feel like a
+          screensaver, and pressure arrives so gradually you can&rsquo;t name the moment
+          it started. Every session leaves behind a glowing lattice of every path you
+          ever drew.
+        </p>
+
+        <ul class="features">
+          <li><span class="features__dot" style="--dot:var(--teal)"></span> Ambient, session-based strategy</li>
+          <li><span class="features__dot" style="--dot:var(--coral)"></span> Draw-a-path controls, built for one thumb</li>
+          <li><span class="features__dot" style="--dot:var(--ocean)"></span> No ads. No subscription. No pressure.</li>
+          <li><span class="features__dot" style="--dot:var(--sun)"></span> Native on iPhone &amp; iPad</li>
+        </ul>
+
+        <div class="shots">
+          <figure class="phone"><img src="assets/shot-menu.png" alt="Approach main menu" loading="lazy" /></figure>
+          <figure class="phone"><img src="assets/shot-level.png" alt="Approach gameplay, routing an aircraft to a helipad" loading="lazy" /></figure>
+          <figure class="phone"><img src="assets/shot-results.png" alt="Approach results screen" loading="lazy" /></figure>
+        </div>
+        <p class="shots__note">Prototype footage. Still in development.</p>
+
+        <div class="game__cta">
+          <a href="mailto:contact@hawaiianshirtstudios.com?subject=Notify%20me%20about%20Approach" class="btn btn--primary">Get launch news</a>
+          <a href="https://x.com/HawaiianStudios" class="btn btn--ghost" target="_blank" rel="noopener">Follow along on X</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO ============ -->
+    <section class="studio" id="studio">
+      <div class="studio__inner">
+        <h2>The studio</h2>
+        <p>
+          Hawaiian Shirt Studios is a tiny independent shop. We build a small number of
+          games and try to make each one calm, tactile, and worth returning to. No
+          roadmaps we can&rsquo;t keep, no dark patterns, just careful work and an ocean
+          breeze.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ CONTACT / FOOTER ============ -->
+  <footer class="site-footer" id="contact">
+    <div class="site-footer__inner">
+      <img src="assets/logo.png" alt="" class="site-footer__mark" width="56" height="56" />
+      <h2 class="site-footer__title">Say aloha</h2>
+      <p class="site-footer__links">
+        <a href="mailto:contact@hawaiianshirtstudios.com">contact@hawaiianshirtstudios.com</a>
+        <span class="dot">&middot;</span>
+        <a href="https://x.com/HawaiianStudios" target="_blank" rel="noopener">@HawaiianStudios</a>
+      </p>
+      <p class="site-footer__copy">&copy; <span id="year">2026</span> Hawaiian Shirt Studios</p>
+    </div>
+  </footer>
+
+  <script>
+    // keep the copyright year current without a build step
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
