@@ -29,17 +29,17 @@
   --shadow: 0 18px 40px -20px rgba(14, 76, 102, 0.45);
 
   --font: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Berkshire Swash", "Poppins", cursive;
+  --font-display: "Oregano", "Poppins", cursive;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* Self-hosted brand display font (Berkshire Swash, latin subset ~17KB) */
+/* Self-hosted brand display font (Oregano, latin subset ~29KB) */
 @font-face {
-  font-family: "Berkshire Swash";
+  font-family: "Oregano";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/fonts/berkshire-swash-latin.woff2") format("woff2");
+  src: url("assets/fonts/oregano-latin.woff2") format("woff2");
 }
 
 * { box-sizing: border-box; }
@@ -104,7 +104,17 @@ h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; margin: 0; }
 }
 .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--ink); }
 .brand__mark { width: 40px; height: 40px; border-radius: 10px; }
-.brand__name { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; letter-spacing: 0; }
+.brand__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  background: linear-gradient(95deg, var(--ocean-deep) 0%, var(--ocean) 24%, var(--teal) 44%, var(--coral) 74%, var(--sun) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
 .site-nav { display: flex; gap: clamp(0.8rem, 2.5vw, 1.8rem); }
 .site-nav a { color: var(--muted); font-weight: 500; font-size: 0.98rem; }
 .site-nav a:hover { color: var(--sun); }
@@ -143,7 +153,7 @@ h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; margin: 0; }
   z-index: -1;
   pointer-events: none;
 }
-.hero__content { position: relative; max-width: 720px; margin: 0 auto; }
+.hero__content { position: relative; max-width: min(94vw, 1040px); margin: 0 auto; }
 .hero__logo {
   width: clamp(96px, 20vw, 150px);
   height: auto;
