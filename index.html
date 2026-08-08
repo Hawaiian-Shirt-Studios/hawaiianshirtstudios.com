@@ -149,6 +149,33 @@
   <script>
     // keep the copyright year current without a build step
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // On load, the waves rush in fast, then ease down to their calm drift.
+    (function () {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var anims = [];
+      document.querySelectorAll('.wave').forEach(function (w) {
+        var a = w.getAnimations && w.getAnimations()[0];
+        if (a) anims.push(a);
+      });
+      if (!anims.length) return;
+
+      var START = 7;        // 7x speed at load
+      var DURATION = 2800;  // ms to ease back to normal (1x)
+      var t0 = null;
+      function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
+
+      anims.forEach(function (a) { a.playbackRate = START; });
+      function tick(now) {
+        if (t0 === null) t0 = now;
+        var p = Math.min((now - t0) / DURATION, 1);
+        var rate = START + (1 - START) * easeOutCubic(p);
+        anims.forEach(function (a) { a.playbackRate = rate; });
+        if (p < 1) requestAnimationFrame(tick);
+        else anims.forEach(function (a) { a.playbackRate = 1; });
+      }
+      requestAnimationFrame(tick);
+    })();
   </script>
 </body>
 </html>
