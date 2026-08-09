@@ -331,7 +331,9 @@ h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; margin: 0; }
 .site-footer__links { font-size: 1.05rem; margin: 0 0 1.5rem; }
 .site-footer__links a { color: var(--aqua); font-weight: 500; }
 .site-footer__links a:hover { color: #fff; }
-.site-footer__links .dot { margin: 0 0.6rem; color: rgba(255,255,255,0.4); }
+.site-footer__links .dot { margin: 0 0.6rem; color: rgba(255,255,255,0.4); display: none; }
+.site-footer__links.has-email .dot { display: inline; }
+.js-email { cursor: pointer; }
 .site-footer__copy { font-family: var(--mono); font-size: 0.82rem; color: rgba(255,255,255,0.6); margin: 0; }
 
 /* ---------- responsive ---------- */

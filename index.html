@@ -138,7 +138,7 @@
       <img src="assets/logo.png" alt="" class="site-footer__mark" width="56" height="56" />
       <h2 class="site-footer__title">Say <span class="aloha">aloha</span></h2>
       <p class="site-footer__links">
-        <a href="mailto:contact@hawaiianshirtstudios.com">contact@hawaiianshirtstudios.com</a>
+        <span class="js-email-slot" data-user="contact" data-domain="hawaiianshirtstudios.com"></span><noscript>contact&nbsp;(at)&nbsp;hawaiianshirtstudios.com</noscript>
         <span class="dot">&middot;</span>
         <a href="https://x.com/HawaiianStudios" target="_blank" rel="noopener">@HawaiianStudios</a>
       </p>
@@ -195,6 +195,51 @@
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
       els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // Contact email: absent from the DOM at load. Injected into the footer only
+    // after the visitor scrolls a bit, and the mailto: is attached only on
+    // interaction (tap/hover/focus). Passive harvesters that just fetch the page
+    // never see an address or a mailto link.
+    (function () {
+      var slots = document.querySelectorAll('.js-email-slot');
+      if (!slots.length) return;
+      var done = false;
+
+      function revealAll() {
+        if (done) return;
+        done = true;
+        window.removeEventListener('scroll', onScroll);
+        slots.forEach(function (slot) {
+          var addr = slot.dataset.user + '@' + slot.dataset.domain;
+          var a = document.createElement('a');
+          a.textContent = addr;
+          a.className = 'js-email';
+          a.rel = 'nofollow';
+          a.tabIndex = 0;
+          var armed = false;
+          function arm() { if (armed) return; armed = true; a.href = 'mailto:' + addr; }
+          ['pointerenter', 'pointerdown', 'touchstart', 'focus'].forEach(function (evt) {
+            a.addEventListener(evt, arm);
+          });
+          a.addEventListener('click', arm);
+          slot.appendChild(a);
+          if (slot.parentNode) slot.parentNode.classList.add('has-email');
+        });
+      }
+
+      function onScroll() { if (window.scrollY > 300) revealAll(); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Fallback: also reveal as the slot approaches the viewport, so it appears
+      // for short pages or a jump-to-bottom where the scroll threshold isn't hit.
+      if ('IntersectionObserver' in window) {
+        var io2 = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { revealAll(); io2.disconnect(); } });
+        }, { rootMargin: '0px 0px 300px 0px' });
+        slots.forEach(function (s) { io2.observe(s); });
+      }
+      onScroll(); // in case the page is already scrolled on load
     })();
   </script>
 </body>

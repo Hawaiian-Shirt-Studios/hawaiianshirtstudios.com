@@ -99,9 +99,9 @@
     <h2>Information we collect</h2>
     <p>
       Directly, none. We don&rsquo;t operate servers that collect personal information, and we
-      don&rsquo;t maintain user accounts or mailing lists. If you email us (for example, at
-      contact@hawaiianshirtstudios.com), we&rsquo;ll receive whatever you choose to put in your
-      message, and we&rsquo;ll use it only to reply to you.
+      don&rsquo;t maintain user accounts or mailing lists. If you email us (using the contact
+      address on this site), we&rsquo;ll receive whatever you choose to put in your message, and
+      we&rsquo;ll use it only to reply to you.
     </p>
 
     <h2>How we use information</h2>
@@ -164,7 +164,7 @@
     <h2>Contact us</h2>
     <p>
       Questions about this policy or your privacy? Email us at
-      <a href="mailto:contact@hawaiianshirtstudios.com">contact@hawaiianshirtstudios.com</a>.
+      <span class="js-email-slot" data-user="contact" data-domain="hawaiianshirtstudios.com"></span><noscript>contact&nbsp;(at)&nbsp;hawaiianshirtstudios.com</noscript>.
     </p>
   </main>
 
@@ -174,7 +174,7 @@
       <img src="assets/logo.png" alt="" class="site-footer__mark" width="56" height="56" />
       <h2 class="site-footer__title">Say <span class="aloha">aloha</span></h2>
       <p class="site-footer__links">
-        <a href="mailto:contact@hawaiianshirtstudios.com">contact@hawaiianshirtstudios.com</a>
+        <span class="js-email-slot" data-user="contact" data-domain="hawaiianshirtstudios.com"></span><noscript>contact&nbsp;(at)&nbsp;hawaiianshirtstudios.com</noscript>
         <span class="dot">&middot;</span>
         <a href="https://x.com/HawaiianStudios" target="_blank" rel="noopener">@HawaiianStudios</a>
       </p>
@@ -184,6 +184,48 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact email: absent from the DOM at load. Injected only after the visitor
+    // scrolls a bit, and the mailto: is attached only on interaction. Passive
+    // harvesters that just fetch the page never see an address or a mailto link.
+    (function () {
+      var slots = document.querySelectorAll('.js-email-slot');
+      if (!slots.length) return;
+      var done = false;
+
+      function revealAll() {
+        if (done) return;
+        done = true;
+        window.removeEventListener('scroll', onScroll);
+        slots.forEach(function (slot) {
+          var addr = slot.dataset.user + '@' + slot.dataset.domain;
+          var a = document.createElement('a');
+          a.textContent = addr;
+          a.className = 'js-email';
+          a.rel = 'nofollow';
+          a.tabIndex = 0;
+          var armed = false;
+          function arm() { if (armed) return; armed = true; a.href = 'mailto:' + addr; }
+          ['pointerenter', 'pointerdown', 'touchstart', 'focus'].forEach(function (evt) {
+            a.addEventListener(evt, arm);
+          });
+          a.addEventListener('click', arm);
+          slot.appendChild(a);
+          if (slot.parentNode) slot.parentNode.classList.add('has-email');
+        });
+      }
+
+      function onScroll() { if (window.scrollY > 300) revealAll(); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      if ('IntersectionObserver' in window) {
+        var io2 = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { revealAll(); io2.disconnect(); } });
+        }, { rootMargin: '0px 0px 300px 0px' });
+        slots.forEach(function (s) { io2.observe(s); });
+      }
+      onScroll();
+    })();
   </script>
 </body>
 </html>
