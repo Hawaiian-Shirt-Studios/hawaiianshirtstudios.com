@@ -327,6 +327,7 @@ h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; margin: 0; }
 }
 .site-footer__mark { width: 56px; height: 56px; margin: 0 auto 1rem; border-radius: 14px; }
 .site-footer__title { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: 1rem; }
+.site-footer__title .aloha { font-family: var(--font-display); font-weight: 400; font-size: 1.15em; }
 .site-footer__links { font-size: 1.05rem; margin: 0 0 1.5rem; }
 .site-footer__links a { color: var(--aqua); font-weight: 500; }
 .site-footer__links a:hover { color: #fff; }
