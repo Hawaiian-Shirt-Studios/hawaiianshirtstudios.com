@@ -71,10 +71,10 @@
   <main>
     <!-- ============ APPROACH ============ -->
     <section class="approach" id="approach">
-      <p class="eyebrow">Our first game</p>
+      <p class="eyebrow reveal">Our first game</p>
 
       <div class="game">
-        <div class="game__intro">
+        <div class="game__intro reveal">
           <img src="assets/approach-icon.png" alt="Approach app icon" class="game__icon" width="120" height="120" />
           <div>
             <h2 class="game__title">Approach</h2>
@@ -82,34 +82,34 @@
           </div>
         </div>
 
-        <p class="game__lead">
+        <p class="game__lead reveal">
           You are the calm hand above a small, beautiful airspace. Draw flight paths
           with your finger, stack aircraft at different altitudes so they pass safely
           over one another, and land everything.
         </p>
 
-        <p class="game__body">
+        <p class="game__body reveal">
           It starts near-silent and nearly empty. The first ninety seconds feel like a
           screensaver, and pressure arrives so gradually you can&rsquo;t name the moment
           it started. Every session leaves behind a glowing lattice of every path you
           ever drew.
         </p>
 
-        <ul class="features">
+        <ul class="features stagger">
           <li><span class="features__dot" style="--dot:var(--teal)"></span> Ambient, session-based strategy</li>
           <li><span class="features__dot" style="--dot:var(--coral)"></span> Draw-a-path controls, built for one thumb</li>
           <li><span class="features__dot" style="--dot:var(--ocean)"></span> No ads. No subscription. No pressure.</li>
           <li><span class="features__dot" style="--dot:var(--sun)"></span> Native on iPhone &amp; iPad</li>
         </ul>
 
-        <div class="shots">
+        <div class="shots stagger">
           <figure class="phone"><img src="assets/shot-menu.png" alt="Approach main menu" loading="lazy" /></figure>
           <figure class="phone"><img src="assets/shot-level.png" alt="Approach gameplay, routing an aircraft to a helipad" loading="lazy" /></figure>
           <figure class="phone"><img src="assets/shot-results.png" alt="Approach results screen" loading="lazy" /></figure>
         </div>
-        <p class="shots__note">Prototype footage. Still in development.</p>
+        <p class="shots__note reveal">Prototype footage. Still in development.</p>
 
-        <div class="game__cta">
+        <div class="game__cta reveal">
           <span class="appstore-badge" aria-disabled="true" title="Coming soon to the App Store">
             <img src="assets/app-store-badge.svg" alt="Download on the App Store" />
           </span>
@@ -120,7 +120,7 @@
 
     <!-- ============ STUDIO ============ -->
     <section class="studio" id="studio">
-      <div class="studio__inner">
+      <div class="studio__inner reveal">
         <h2>The studio</h2>
         <p>
           Hawaiian Shirt Studios is a tiny independent shop. We build a small number of
@@ -134,7 +134,7 @@
 
   <!-- ============ CONTACT / FOOTER ============ -->
   <footer class="site-footer" id="contact">
-    <div class="site-footer__inner">
+    <div class="site-footer__inner reveal">
       <img src="assets/logo.png" alt="" class="site-footer__mark" width="56" height="56" />
       <h2 class="site-footer__title">Say <span class="aloha">aloha</span></h2>
       <p class="site-footer__links">
@@ -175,6 +175,26 @@
         else anims.forEach(function (a) { a.playbackRate = 1; });
       }
       requestAnimationFrame(tick);
+    })();
+
+    // Reveal-on-scroll: elements rise, fade, and un-blur as they enter view.
+    (function () {
+      var els = document.querySelectorAll('.reveal, .stagger');
+      if (!els.length) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
     })();
   </script>
 </body>
