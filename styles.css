@@ -131,8 +131,12 @@ h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; margin: 0; }
   position: absolute;
   inset: 0;
   z-index: -2;
+  /* fallback for browsers without gradient color-space interpolation */
+  background: linear-gradient(180deg, var(--sky-peach), var(--sun), var(--ocean-deep));
+  /* interpolate in OKLab: perceptually smooth, no sRGB brown muddle and
+     no OKLCH hue rotation (which turned orange -> teal into hot pink) */
   background: linear-gradient(
-    180deg,
+    180deg in oklab,
     var(--sky-top) 0%,
     var(--sky-peach) 26%,
     var(--coral) 48%,
