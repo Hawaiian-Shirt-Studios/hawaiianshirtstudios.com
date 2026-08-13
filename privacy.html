@@ -17,6 +17,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Anonymous, cookie-free web analytics (TelemetryDeck), self-hosted -->
+  <script src="assets/telemetrydeck.min.js" data-app-id="4B5CF27B-6DF2-4A83-ACFD-2FA0EE6E2CDA"></script>
 </head>
 <body>
 
@@ -48,19 +51,27 @@
     </p>
     <p>
       <strong>The short version:</strong> we don&rsquo;t collect, store, or sell your personal
-      information. We don&rsquo;t run ads, we don&rsquo;t use third-party analytics or tracking,
-      and we don&rsquo;t ask you to create an account. The sections below explain what that means,
-      and the few places where standard infrastructure (like an app store or a web host) is
-      involved.
+      information, and we don&rsquo;t run ads. The only analytics we use is a single
+      privacy-focused, anonymous tool (TelemetryDeck), and we don&rsquo;t ask you to create an
+      account. The sections below explain what that means, and the few places where standard
+      infrastructure (like an app store or a web host) is involved.
     </p>
 
     <h2>This website</h2>
     <p>
-      Our website is a set of static pages hosted on GitHub Pages. We don&rsquo;t use cookies,
-      analytics, tracking pixels, or advertising on it. As with any website, the services that
-      deliver it may process limited technical information in order to serve pages to you:
+      Our website is a set of static pages hosted on GitHub Pages. We don&rsquo;t run advertising on
+      it, and we don&rsquo;t track you across the web. To understand roughly how the site is used we
+      use one anonymous analytics tool, and a few standard services process limited technical
+      information to deliver and measure the site:
     </p>
     <ul>
+      <li>
+        <strong>TelemetryDeck</strong> provides anonymous website analytics. When you open a page it
+        records an anonymous pageview. It uses no cookies and no advertising identifiers, and any
+        visitor identifier is anonymized, so a visit can&rsquo;t be traced back to you. TelemetryDeck
+        is a Germany-based company subject to the GDPR. See
+        <a href="https://telemetrydeck.com/privacy/" target="_blank" rel="noopener">TelemetryDeck&rsquo;s Privacy Policy</a>.
+      </li>
       <li>
         <strong>GitHub Pages</strong> (our host) may log standard request data such as your IP
         address and browser type for security and reliability. See
@@ -72,7 +83,10 @@
         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.
       </li>
     </ul>
-    <p>We don&rsquo;t receive, store, or have access to that information ourselves.</p>
+    <p>
+      The website analytics we receive are anonymous and aggregate. They tell us things like how many
+      people viewed a page, not who they are, and we can&rsquo;t use them to identify you.
+    </p>
 
     <h2>Our apps (including Neon Landing)</h2>
     <p>Our games are designed to work without accounts and without sending your data to us.</p>
@@ -91,8 +105,17 @@
         were made). See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple&rsquo;s Privacy Policy</a>.
       </li>
       <li>
-        <strong>No ads or tracking.</strong> Our apps contain no third-party advertising, and we
-        don&rsquo;t embed third-party analytics or tracking SDKs.
+        <strong>No ads.</strong> Our apps contain no third-party advertising, and no advertising or
+        cross-app tracking identifiers.
+      </li>
+      <li>
+        <strong>Privacy-focused analytics.</strong> To understand how the app is used and improve it,
+        we use TelemetryDeck, an analytics service built to be anonymous. It records aggregate usage
+        signals (for example, that the app was opened or a screen was viewed). It uses no advertising
+        identifiers and no cross-app tracking, and any device identifier is anonymized before it
+        reaches TelemetryDeck, so the data can&rsquo;t be traced back to you. TelemetryDeck is a
+        Germany-based company subject to the GDPR. See
+        <a href="https://telemetrydeck.com/privacy/" target="_blank" rel="noopener">TelemetryDeck&rsquo;s Privacy Policy</a>.
       </li>
     </ul>
 
@@ -123,6 +146,7 @@
       <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a> (App Store, in-app purchases, iCloud)</li>
       <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub</a> (website hosting)</li>
       <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Fonts</a> (web fonts on this website)</li>
+      <li><a href="https://telemetrydeck.com/privacy/" target="_blank" rel="noopener">TelemetryDeck</a> (anonymous analytics for our website and apps)</li>
     </ul>
     <p>We encourage you to review their policies to understand how they handle data.</p>
 
@@ -175,10 +199,25 @@
       <h2 class="site-footer__title">Say <span class="aloha">aloha</span></h2>
       <p class="site-footer__links">
         <span class="js-email-slot" data-user="contact" data-domain="hawaiianshirtstudios.com"></span><noscript>contact&nbsp;(at)&nbsp;hawaiianshirtstudios.com</noscript>
-        <span class="dot">&middot;</span>
-        <a href="https://x.com/HawaiianStudios" target="_blank" rel="noopener">@HawaiianStudios</a>
       </p>
-      <p class="site-footer__copy">&copy; <span id="year">2026</span> Hawaiian Shirt Studios &middot; <a href="privacy.html">Privacy</a></p>
+      <nav class="social" aria-label="Follow Hawaiian Shirt Studios">
+        <a class="social__link" href="https://www.instagram.com/hawaiianshirtstudios" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="social__link" href="https://x.com/HawaiianStudios" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+        </a>
+        <a class="social__link" href="https://www.tiktok.com/@hawaiian_shirt_studios" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></svg>
+        </a>
+        <a class="social__link" href="https://www.facebook.com/profile.php?id=61592614781257" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073Z"/></svg>
+        </a>
+        <a class="social__link" href="https://www.youtube.com/@HawaiianShirtStudios" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
+        </a>
+      </nav>
+      <p class="site-footer__copy">&copy; <span id="year">2026</span> Hawaiian Shirt Studios &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
     </div>
   </footer>
 
