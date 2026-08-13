@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Landing &middot; Hawaiian Shirt Studios</title>
+  <meta name="description" content="Neon Landing is a calm, glowing iOS game about drawing flight paths and landing aircraft. Draw a path, match each plane to its colored pad, and land everything. Coming soon." />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#101418" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hawaiian Shirt Studios" />
+  <meta property="og:title" content="Neon Landing" />
+  <meta property="og:description" content="A calm, glowing iOS game about drawing flight paths and landing aircraft. Coming soon." />
+  <meta property="og:url" content="https://hawaiianshirtstudios.com/neon-landing.html" />
+  <meta property="og:image" content="https://hawaiianshirtstudios.com/assets/ns-menu.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@HawaiianStudios" />
+  <meta name="twitter:title" content="Neon Landing" />
+  <meta name="twitter:description" content="A calm, glowing iOS game about drawing flight paths and landing aircraft. Coming soon." />
+  <meta name="twitter:image" content="https://hawaiianshirtstudios.com/assets/ns-menu.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Oregano&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="neon.css" />
+</head>
+<body class="neon-page">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Hawaiian Shirt Studios home">
+      <img src="assets/logo.png" alt="" class="brand__mark" width="40" height="40" />
+      <span class="brand__name">Hawaiian&nbsp;Shirt&nbsp;Studios</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#studio">Studio</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="neon-section neon-hero">
+    <div class="neon-hero__inner">
+      <p class="neon-eyebrow">Hawaiian Shirt Studios presents</p>
+
+      <img src="assets/neon-landing-icon.png" class="neon-appicon" alt="Neon Landing app icon" width="172" height="172" />
+
+      <h1 class="neon-title" aria-label="Neon Landing">
+        <span class="neon-row" aria-hidden="true">
+          <span class="neon-letter" data-c="0" style="--i:0">N</span>
+          <span class="neon-letter" data-c="1" style="--i:1">E</span>
+          <span class="neon-letter" data-c="2" style="--i:2">O</span>
+          <span class="neon-letter" data-c="3" style="--i:3">N</span>
+        </span>
+        <span class="neon-row" aria-hidden="true">
+          <span class="neon-letter" data-c="4" style="--i:4">L</span>
+          <span class="neon-letter" data-c="5" style="--i:5">A</span>
+          <span class="neon-letter" data-c="6" style="--i:6">N</span>
+          <span class="neon-letter" data-c="0" style="--i:7">D</span>
+          <span class="neon-letter neon-letter--narrow" data-c="1" style="--i:8">I</span>
+          <span class="neon-letter" data-c="2" style="--i:9">N</span>
+          <span class="neon-letter" data-c="3" style="--i:10">G</span>
+        </span>
+      </h1>
+
+      <p class="neon-tagline">
+        You are the calm hand above a small, glowing airspace. Draw flight paths with your finger,
+        match each aircraft to the pad wearing its color, and land everything. Every session leaves
+        behind a lattice of light.
+      </p>
+
+      <div class="neon-cta">
+        <span class="neon-badge">Coming soon to iOS</span>
+        <span class="appstore-badge" aria-disabled="true" title="Coming soon to the App Store">
+          <img src="assets/app-store-badge.svg" alt="Download on the App Store" />
+        </span>
+        <p class="coming-soon">Coming Soon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREENSHOTS ============ -->
+  <section class="neon-section neon-shots">
+    <div class="neon-shots__grid">
+      <figure class="neon-phone"><img src="assets/ns-menu.png" alt="Neon Landing title screen with the glowing NEON LANDING logo" loading="lazy" /></figure>
+      <figure class="neon-phone"><img src="assets/ns-path.png" alt="Drawing a flight path to route a plane onto a runway" loading="lazy" /></figure>
+      <figure class="neon-phone"><img src="assets/ns-field.png" alt="The dark playfield with a runway, a helipad, and the neon equaliser" loading="lazy" /></figure>
+    </div>
+    <p class="neon-shots__note">Prototype footage. Still in development.</p>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="neon-section neon-about">
+    <h2>Competence under calm.</h2>
+    <p>
+      Neon Landing starts near-silent and nearly empty. The first ninety seconds feel like a
+      screensaver. Drag from an aircraft to trace where it should fly. Send each plane to the runway,
+      each helicopter to the helipad, always matching its color. Stack them at different altitudes so
+      they pass safely over one another, and steer clear of mountains and restricted zones.
+    </p>
+    <p>
+      Pressure arrives so gradually you can&rsquo;t name the moment it started. And when the
+      airspace finally fills, what you&rsquo;ve made is a dense, glowing lattice of every path you ever
+      drew. It is an ambient routing puzzle you leave feeling like an expert, not a juggler.
+    </p>
+
+    <ul class="neon-features">
+      <li data-c="0"><span class="ndot"></span> Draw-a-path controls, built for one thumb</li>
+      <li data-c="1"><span class="ndot"></span> Match each aircraft to the pad wearing its color</li>
+      <li data-c="2"><span class="ndot"></span> Route around mountains and restricted airspace</li>
+      <li data-c="3"><span class="ndot"></span> Calm by default, tension by accumulation</li>
+      <li data-c="4"><span class="ndot"></span> No ads, no subscription, just a one-time unlock</li>
+      <li data-c="5"><span class="ndot"></span> Native on iPhone &amp; iPad</li>
+    </ul>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <img src="assets/logo-white.png" alt="" class="site-footer__mark" width="56" height="56" />
+      <h2 class="site-footer__title">Say <span class="aloha">aloha</span></h2>
+      <p class="site-footer__links">
+        <span class="js-email-slot" data-user="contact" data-domain="hawaiianshirtstudios.com"></span><noscript>contact&nbsp;(at)&nbsp;hawaiianshirtstudios.com</noscript>
+        <span class="dot">&middot;</span>
+        <a href="https://x.com/HawaiianStudios" target="_blank" rel="noopener">@HawaiianStudios</a>
+      </p>
+      <p class="site-footer__copy">&copy; <span id="year">2026</span> Hawaiian Shirt Studios &middot; <a href="privacy.html">Privacy</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact email: absent from the DOM at load. Injected only after the visitor
+    // scrolls a bit, and the mailto: is attached only on interaction.
+    (function () {
+      var slots = document.querySelectorAll('.js-email-slot');
+      if (!slots.length) return;
+      var done = false;
+      function revealAll() {
+        if (done) return;
+        done = true;
+        window.removeEventListener('scroll', onScroll);
+        slots.forEach(function (slot) {
+          var addr = slot.dataset.user + '@' + slot.dataset.domain;
+          var a = document.createElement('a');
+          a.textContent = addr;
+          a.className = 'js-email';
+          a.rel = 'nofollow';
+          a.tabIndex = 0;
+          var armed = false;
+          function arm() { if (armed) return; armed = true; a.href = 'mailto:' + addr; }
+          ['pointerenter', 'pointerdown', 'touchstart', 'focus'].forEach(function (evt) { a.addEventListener(evt, arm); });
+          a.addEventListener('click', arm);
+          slot.appendChild(a);
+          if (slot.parentNode) slot.parentNode.classList.add('has-email');
+        });
+      }
+      function onScroll() { if (window.scrollY > 300) revealAll(); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { revealAll(); io.disconnect(); } });
+        }, { rootMargin: '0px 0px 300px 0px' });
+        slots.forEach(function (s) { io.observe(s); });
+      }
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

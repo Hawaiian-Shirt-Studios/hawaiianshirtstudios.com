@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hawaiian Shirt Studios</title>
-  <meta name="description" content="Hawaiian Shirt Studios is a small independent studio making calm, beautiful games. First up: Approach, a game about drawing flight paths and landing planes." />
+  <meta name="description" content="Hawaiian Shirt Studios is a small independent studio making calm, beautiful games. First up: Neon Landing, a game about drawing flight paths and landing planes." />
 
   <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
@@ -16,13 +16,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Hawaiian Shirt Studios" />
   <meta property="og:title" content="Hawaiian Shirt Studios" />
-  <meta property="og:description" content="A small independent studio making calm, beautiful games. First up: Approach." />
+  <meta property="og:description" content="A small independent studio making calm, beautiful games. First up: Neon Landing." />
   <meta property="og:url" content="https://hawaiianshirtstudios.com/" />
   <meta property="og:image" content="https://hawaiianshirtstudios.com/assets/logo.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@HawaiianStudios" />
   <meta name="twitter:title" content="Hawaiian Shirt Studios" />
-  <meta name="twitter:description" content="A small independent studio making calm, beautiful games. First up: Approach." />
+  <meta name="twitter:description" content="A small independent studio making calm, beautiful games. First up: Neon Landing." />
   <meta name="twitter:image" content="https://hawaiianshirtstudios.com/assets/logo.png" />
 
   <!-- Fonts -->
@@ -31,6 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="neon.css" />
 </head>
 <body>
 
@@ -41,7 +42,7 @@
       <span class="brand__name">Hawaiian&nbsp;Shirt&nbsp;Studios</span>
     </a>
     <nav class="site-nav">
-      <a href="#approach">Approach</a>
+      <a href="#neon-landing">Neon Landing</a>
       <a href="#studio">Studio</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -57,7 +58,7 @@
       <img src="assets/logo-white.png" alt="Hawaiian Shirt Studios logo" class="hero__logo" width="150" height="150" />
       <h1 class="hero__title">Hawaiian Shirt Studios</h1>
       <p class="hero__tagline">A small studio making calm, beautiful games.<br />Built slow, from a sunny corner of the internet.</p>
-      <a href="#approach" class="btn btn--primary">Meet Approach</a>
+      <a href="#neon-landing" class="btn btn--primary">Meet Neon Landing</a>
     </div>
 
     <!-- layered waves transitioning into the page -->
@@ -69,52 +70,38 @@
   </section>
 
   <main>
-    <!-- ============ APPROACH ============ -->
-    <section class="approach" id="approach">
+    <!-- ============ NEON LANDING (dark teaser -> dedicated page) ============ -->
+    <section class="neon-section neon-teaser" id="neon-landing">
       <p class="eyebrow reveal">Our first game</p>
 
-      <div class="game">
-        <div class="game__intro reveal">
-          <img src="assets/approach-icon.png" alt="Approach app icon" class="game__icon" width="120" height="120" />
-          <div>
-            <h2 class="game__title">Approach</h2>
-            <span class="badge">Coming soon to iOS</span>
-          </div>
-        </div>
+      <img src="assets/neon-landing-icon.png" class="neon-appicon reveal" alt="Neon Landing app icon" width="128" height="128" />
 
-        <p class="game__lead reveal">
-          You are the calm hand above a small, beautiful airspace. Draw flight paths
-          with your finger, stack aircraft at different altitudes so they pass safely
-          over one another, and land everything.
-        </p>
+      <h2 class="neon-title reveal" aria-label="Neon Landing">
+        <span class="neon-row" aria-hidden="true">
+          <span class="neon-letter" data-c="0" style="--i:0">N</span>
+          <span class="neon-letter" data-c="1" style="--i:1">E</span>
+          <span class="neon-letter" data-c="2" style="--i:2">O</span>
+          <span class="neon-letter" data-c="3" style="--i:3">N</span>
+        </span>
+        <span class="neon-row" aria-hidden="true">
+          <span class="neon-letter" data-c="4" style="--i:4">L</span>
+          <span class="neon-letter" data-c="5" style="--i:5">A</span>
+          <span class="neon-letter" data-c="6" style="--i:6">N</span>
+          <span class="neon-letter" data-c="0" style="--i:7">D</span>
+          <span class="neon-letter neon-letter--narrow" data-c="1" style="--i:8">I</span>
+          <span class="neon-letter" data-c="2" style="--i:9">N</span>
+          <span class="neon-letter" data-c="3" style="--i:10">G</span>
+        </span>
+      </h2>
 
-        <p class="game__body reveal">
-          It starts near-silent and nearly empty. The first ninety seconds feel like a
-          screensaver, and pressure arrives so gradually you can&rsquo;t name the moment
-          it started. Every session leaves behind a glowing lattice of every path you
-          ever drew.
-        </p>
+      <p class="neon-teaser__lead reveal">
+        A calm, glowing iOS game about drawing flight paths and landing aircraft. Draw a path,
+        match each plane to its colored pad, and leave a lattice of light behind.
+      </p>
 
-        <ul class="features stagger">
-          <li><span class="features__dot" style="--dot:var(--teal)"></span> Ambient, session-based strategy</li>
-          <li><span class="features__dot" style="--dot:var(--coral)"></span> Draw-a-path controls, built for one thumb</li>
-          <li><span class="features__dot" style="--dot:var(--ocean)"></span> No ads. No subscription. No pressure.</li>
-          <li><span class="features__dot" style="--dot:var(--sun)"></span> Native on iPhone &amp; iPad</li>
-        </ul>
-
-        <div class="shots stagger">
-          <figure class="phone"><img src="assets/shot-menu.png" alt="Approach main menu" loading="lazy" /></figure>
-          <figure class="phone"><img src="assets/shot-level.png" alt="Approach gameplay, routing an aircraft to a helipad" loading="lazy" /></figure>
-          <figure class="phone"><img src="assets/shot-results.png" alt="Approach results screen" loading="lazy" /></figure>
-        </div>
-        <p class="shots__note reveal">Prototype footage. Still in development.</p>
-
-        <div class="game__cta reveal">
-          <span class="appstore-badge" aria-disabled="true" title="Coming soon to the App Store">
-            <img src="assets/app-store-badge.svg" alt="Download on the App Store" />
-          </span>
-          <p class="coming-soon">Coming Soon</p>
-        </div>
+      <div class="game__cta reveal" style="align-items: center;">
+        <a href="neon-landing.html" class="btn btn--primary">Explore Neon Landing</a>
+        <p class="coming-soon">Coming soon to iOS</p>
       </div>
     </section>
 

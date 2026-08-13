@@ -2,7 +2,7 @@
 
 A small independent studio making calm, beautiful games.
 
-Our first game, **Approach**, is a calm iOS game about drawing flight paths and
+Our first game, **Neon Landing**, is a calm iOS game about drawing flight paths and
 landing planes. Coming soon.
 
 - Web: [hawaiianshirtstudios.com](https://hawaiianshirtstudios.com)
