@@ -1,5 +1,5 @@
 /* =====================================================================
-   Neon Landing — the game's dark/neon identity, ported from the app.
+   Neon Landing - the game's dark/neon identity, ported from the app.
    Title font: Bitcount Grid Single. Per-letter colours are the game's 7
    routing "pad" colours (App/PadColors.swift) cycled by letter index.
    Each letter drifts on a slow sine wave (BeatTitle.swift:
@@ -52,7 +52,7 @@
 .neon-letter {
   display: inline-block;
   color: var(--nc);
-  /* per-letter glow in the letter's own colour — tight + dim so the dot-grid
+  /* per-letter glow in the letter's own colour - tight + dim so the dot-grid
      glyphs stay crisp against the dark field (a big bloom washes them out) */
   text-shadow:
     0 0 0.05em color-mix(in oklab, var(--nc) 78%, transparent),
@@ -71,7 +71,7 @@
 .neon-letter[data-c="4"] { --nc: var(--pad-4); }
 .neon-letter[data-c="5"] { --nc: var(--pad-5); }
 .neon-letter[data-c="6"] { --nc: var(--pad-6); }
-/* the monospace "I" sits in a full-width cell with big side gaps — pull its
+/* the monospace "I" sits in a full-width cell with big side gaps - pull its
    neighbours in so LANDING reads DIN, not D I N */
 .neon-letter--narrow { margin-inline: -0.13em; }
 
@@ -118,7 +118,7 @@
 .neon-section > * { position: relative; z-index: 1; }
 
 /* =====================================================================
-   Neon Landing — dedicated page layout (dark throughout)
+   Neon Landing - dedicated page layout (dark throughout)
    ===================================================================== */
 body.neon-page {
   background: var(--neon-bg-2);
@@ -276,4 +276,85 @@ body.neon-page {
 
 @media (max-width: 720px) {
   .neon-shots__grid { grid-template-columns: 1fr; max-width: 340px; }
+}
+
+/* =====================================================================
+   FAQ / support accordion (native <details>, exclusive via name="faq")
+   ===================================================================== */
+.neon-faq { padding: clamp(3rem, 8vw, 5.5rem) 1.25rem; }
+.neon-faq__inner { max-width: 760px; margin: 0 auto; }
+.neon-faq__title {
+  text-align: center; margin: 0.35rem 0 2.2rem;
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 700; color: var(--neon-ink);
+}
+.neon-faq .neon-eyebrow { text-align: center; }
+
+.faq-group { margin-bottom: 2.1rem; }
+.faq-group:last-of-type { margin-bottom: 0; }
+.faq-group__title {
+  margin: 0 0 0.8rem; padding-left: 0.2rem;
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon-muted);
+}
+
+.faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.faq-item:hover { border-color: rgba(255, 255, 255, 0.18); }
+.faq-item[open] {
+  border-color: rgba(120, 150, 220, 0.42);
+  background: rgba(120, 140, 200, 0.06);
+}
+.faq-item summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.02rem 1.2rem;
+  font-weight: 600; font-size: 1.02rem; line-height: 1.4; color: var(--neon-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:focus-visible { outline: 2px solid var(--pad-0); outline-offset: 3px; }
+
+/* chevron marker: points down when closed, flips up when open */
+.faq-mark {
+  flex: none; width: 9px; height: 9px; margin: 2px 4px 0 0; align-self: center;
+  border-right: 2px solid var(--pad-3); border-bottom: 2px solid var(--pad-3);
+  transform: rotate(45deg); transition: transform 0.3s ease;
+}
+.faq-item[open] .faq-mark { transform: rotate(225deg); }
+
+.faq-a { padding: 0 1.2rem 1.15rem; color: var(--neon-muted); }
+.faq-a p { margin: 0; line-height: 1.62; }
+.faq-a a, .faq-a .js-email { color: var(--pad-3); }
+
+/* base reveal that works everywhere (content fades and slides in on open) */
+.faq-item[open] .faq-a { animation: faq-reveal 0.3s ease both; }
+@keyframes faq-reveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* progressive enhancement: true height animation where supported (harmless elsewhere) */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  .faq-item::details-content {
+    height: 0; overflow: hidden;
+    transition: height 0.32s ease, content-visibility 0.32s allow-discrete;
+  }
+  .faq-item[open]::details-content { height: auto; }
+  .faq-item[open] .faq-a { animation: none; }
+}
+
+.faq-foot {
+  text-align: center; margin: 2.4rem auto 0; max-width: 560px;
+  color: var(--neon-muted); font-size: 1rem; line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item, .faq-mark, .faq-item[open] .faq-a { transition: none; animation: none; }
 }
