@@ -36,7 +36,7 @@
   <!-- Anonymous, cookie-free web analytics (TelemetryDeck), self-hosted -->
   <script src="assets/telemetrydeck.min.js" data-app-id="4B5CF27B-6DF2-4A83-ACFD-2FA0EE6E2CDA"></script>
 </head>
-<body>
+<body class="home">
 
   <!-- ============ HEADER ============ -->
   <header class="site-header">
@@ -58,7 +58,7 @@
     </div>
 
     <div class="hero__content">
-      <img src="assets/logo-white.png" alt="Hawaiian Shirt Studios logo" class="hero__logo" width="150" height="150" />
+      <img src="assets/logo.png" alt="Hawaiian Shirt Studios logo" class="hero__logo" width="150" height="150" />
       <h1 class="hero__title">Hawaiian Shirt Studios</h1>
       <p class="hero__tagline">A small studio making calm, beautiful games.<br />Built slow, from a sunny corner of the internet.</p>
       <a href="#neon-landing" class="btn btn--primary">Meet Neon Landing</a>
@@ -154,6 +154,24 @@
   <script>
     // keep the copyright year current without a build step
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Header brand: hidden while the hero fills the screen, fades in once the
+    // visitor scrolls past the hero (desktop + mobile).
+    (function () {
+      var header = document.querySelector('.site-header');
+      var hero = document.querySelector('.hero');
+      if (!header || !hero) return;
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          header.classList.toggle('scrolled', !entries[0].isIntersecting);
+        }, { threshold: 0, rootMargin: '-72px 0px 0px 0px' });
+        io.observe(hero);
+      } else {
+        window.addEventListener('scroll', function () {
+          header.classList.toggle('scrolled', window.scrollY > window.innerHeight * 0.7);
+        }, { passive: true });
+      }
+    })();
 
     // On load, the waves rush in fast, then ease down to their calm drift.
     (function () {
