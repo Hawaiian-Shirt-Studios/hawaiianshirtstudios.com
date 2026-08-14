@@ -198,11 +198,13 @@ body.home .site-header.scrolled .site-nav a:hover { color: #fff; }
 }
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.7rem, 8.5vw, 4.8rem);
+  font-size: clamp(2.3rem, 8.5vw, 4.8rem);
   font-weight: 400;
   line-height: 1.08;
   color: #fff;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 .hero__tagline {
   margin: 1rem auto 2rem;
@@ -211,6 +213,7 @@ body.home .site-header.scrolled .site-nav a:hover { color: #fff; }
   font-weight: 400;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+  text-wrap: balance;
 }
 .hero__waves {
   position: absolute;
@@ -359,7 +362,7 @@ body.home .site-header.scrolled .site-nav a:hover { color: #fff; }
 }
 .site-footer__mark { width: 56px; height: 56px; margin: 0 auto 1rem; border-radius: 14px; }
 .site-footer__title { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: 1rem; }
-.site-footer__title .aloha { font-family: var(--font-display); font-weight: 400; font-size: 1.15em; }
+.site-footer__title .hello { font-family: var(--font-display); font-weight: 400; font-size: 1.15em; }
 .site-footer__links { font-size: 1.05rem; margin: 0 0 1.5rem; }
 .site-footer__links a { color: var(--aqua); font-weight: 500; }
 .site-footer__links a:hover { color: #fff; }

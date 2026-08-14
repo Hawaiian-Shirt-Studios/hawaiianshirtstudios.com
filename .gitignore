@@ -3,3 +3,6 @@ DEPLOY.local.md
 
 # macOS
 .DS_Store
+
+# Local tooling
+.claude/
