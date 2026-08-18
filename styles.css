@@ -449,11 +449,24 @@ body.home .site-header.scrolled .site-nav a:hover { color: #fff; }
   margin: 2.25rem 0 0.5rem;
 }
 .legal h2:first-of-type { margin-top: 0; }
+.legal h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 1.4rem 0 0.4rem;
+}
 .legal p { margin: 0.6rem 0; }
 .legal ul { padding-left: 1.15rem; margin: 0.6rem 0; }
 .legal li { margin: 0.4rem 0; }
 .legal a { color: var(--ocean); text-decoration: underline; text-underline-offset: 2px; }
 .legal a:hover { color: var(--sun); }
+.legal .legal-note {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
 
 .site-footer__copy a { color: rgba(255,255,255,0.75); text-decoration: underline; text-underline-offset: 2px; }
 .site-footer__copy a:hover { color: #fff; }
