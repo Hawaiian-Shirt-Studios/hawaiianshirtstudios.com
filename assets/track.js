@@ -31,6 +31,23 @@
     } catch (e) { /* analytics must never break the page */ }
   }
 
+  // Apple App Analytics campaign token: if the visitor arrived with ?ct=...,
+  // carry that same token onto every App Store link on the page, so the
+  // download is attributed to that campaign in App Store Connect.
+  (function () {
+    try {
+      var ct = new URLSearchParams(location.search).get("ct");
+      if (!ct) return;
+      ct = ct.slice(0, 100); // sanity cap
+      var links = document.querySelectorAll('a[href*="apps.apple.com"]');
+      for (var j = 0; j < links.length; j++) {
+        var u = new URL(links[j].href);
+        u.searchParams.set("ct", ct); // adds ?ct=, or replaces an existing one
+        links[j].href = u.href;
+      }
+    } catch (e) { /* never break the page */ }
+  })();
+
   // Clicks: social links, the App Store badge, and tagged CTAs.
   document.addEventListener("click", function (e) {
     var t = e.target;
