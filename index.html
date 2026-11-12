@@ -30,6 +30,44 @@
   <meta name="twitter:description" content="A small independent studio making calm, colorful games. First up: Neon Landing." />
   <meta name="twitter:image" content="https://hawaiianshirtstudios.com/assets/og-studio.png" />
 
+  <!-- Structured data: tells search engines this is a company, its logo, and its official profiles -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hawaiianshirtstudios.com/#organization",
+        "name": "Hawaiian Shirt Studios",
+        "legalName": "Hawaiian Shirt Studios LLC",
+        "alternateName": "Hawaiian Shirt Studios LLC",
+        "url": "https://hawaiianshirtstudios.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hawaiianshirtstudios.com/assets/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "A small independent studio making calm, colorful games. First up: Neon Landing, a game about drawing flight paths and landing planes.",
+        "sameAs": [
+          "https://apps.apple.com/us/developer/hawaiian-shirt-studios-llc/id6802797040",
+          "https://x.com/HawaiianStudios",
+          "https://www.facebook.com/HawaiianShirtStudios",
+          "https://www.instagram.com/hawaiianshirtstudios",
+          "https://www.tiktok.com/@hawaiianshirtstudios",
+          "https://www.youtube.com/@HawaiianShirtStudios"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hawaiianshirtstudios.com/#website",
+        "name": "Hawaiian Shirt Studios",
+        "url": "https://hawaiianshirtstudios.com/",
+        "publisher": { "@id": "https://hawaiianshirtstudios.com/#organization" }
+      }
+    ]
+  }
+  </script>
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="neon.css" />
